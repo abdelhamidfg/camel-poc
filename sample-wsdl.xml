@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+-<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:tns="http://Honeywell_INT_LIMS_ODS_LIMSResult_Schema_Orc_LIMS_ODS_ResultData_Prt_Rcv_LIMSResult/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://Honeywell_INT_LIMS_ODS_LIMSResult_Schema_Orc_LIMS_ODS_ResultData_Prt_Rcv_LIMSResult/" name="BizTalkServiceInstance">
+ 
+-<wsdl:documentation>
+ 
+<CreationInfo Created="2022-12-22 10:20:22Z"/>
+ 
+</wsdl:documentation>
+ 
+-<wsdl:types>
+ 
+-<xsd:schema targetNamespace="http://Honeywell_INT_LIMS_ODS_LIMSResult_Schema_Orc_LIMS_ODS_ResultData_Prt_Rcv_LIMSResult/Imports">
+ 
+<xsd:import schemaLocation="http://izsvpasbiz01.iris.local:80/Honeywell.INT.LIMS_ODS_LIMSResult/Honeywell_INT_LIMS_ODS_LIMSResult_Schema_Orc_LIMS_ODS_ResultData_Prt_Rcv_LIMSResult.svc?xsd=xsd2"/>
+ 
+<xsd:import schemaLocation="http://izsvpasbiz01.iris.local:80/Honeywell.INT.LIMS_ODS_LIMSResult/Honeywell_INT_LIMS_ODS_LIMSResult_Schema_Orc_LIMS_ODS_ResultData_Prt_Rcv_LIMSResult.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/Sql/2008/05/Types/TableTypes/dbo"/>
+ 
+<xsd:import schemaLocation="http://izsvpasbiz01.iris.local:80/Honeywell.INT.LIMS_ODS_LIMSResult/Honeywell_INT_LIMS_ODS_LIMSResult_Schema_Orc_LIMS_ODS_ResultData_Prt_Rcv_LIMSResult.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/dbo/pr_LIMS_ODS_LIMSResultDataInsert"/>
+ 
+<xsd:import schemaLocation="http://izsvpasbiz01.iris.local:80/Honeywell.INT.LIMS_ODS_LIMSResult/Honeywell_INT_LIMS_ODS_LIMSResult_Schema_Orc_LIMS_ODS_ResultData_Prt_Rcv_LIMSResult.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/dbo"/>
+ 
+</xsd:schema>
+ 
+</wsdl:types>
+ 
+-<wsdl:message name="Honeywell_INT_LIMS_ODS_LIMSResult_Schema_Orc_LIMS_ODS_ResultData_Prt_Rcv_LIMSResult_Opr_Rcv_LIMSResultData_InputMessage">
+ 
+<wsdl:part name="part" element="LIMSResults"/>
+ 
+</wsdl:message>
+ 
+-<wsdl:message name="Honeywell_INT_LIMS_ODS_LIMSResult_Schema_Orc_LIMS_ODS_ResultData_Prt_Rcv_LIMSResult_Opr_Rcv_LIMSResultData_OutputMessage">
+ 
+<wsdl:part name="part" element="q1:pr_LIMS_ODS_LIMSResultDataInsertResponse" xmlns:q1="http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/dbo"/>
+ 
+</wsdl:message>
+ 
+-<wsdl:portType name="Honeywell_INT_LIMS_ODS_LIMSResult_Schema_Orc_LIMS_ODS_ResultData_Prt_Rcv_LIMSResult">
+ 
+<wsdl:documentation>service "Honeywell.INT.LIMS_ODS_LIMSResult.Schema.Orc_LIMS_ODS_ResultData" port "Prt_Rcv_LIMSResult"</wsdl:documentation>
+ 
+-<wsdl:operation name="Opr_Rcv_LIMSResultData">
+ 
+<wsdl:documentation>operation "Opr_Rcv_LIMSResultData"</wsdl:documentation>
+ 
+<wsdl:input message="tns:Honeywell_INT_LIMS_ODS_LIMSResult_Schema_Orc_LIMS_ODS_ResultData_Prt_Rcv_LIMSResult_Opr_Rcv_LIMSResultData_InputMessage"/>
+ 
+<wsdl:output message="tns:Honeywell_INT_LIMS_ODS_LIMSResult_Schema_Orc_LIMS_ODS_ResultData_Prt_Rcv_LIMSResult_Opr_Rcv_LIMSResultData_OutputMessage"/>
+ 
+</wsdl:operation>
+ 
+</wsdl:portType>
+ 
+-<wsdl:binding name="BasicHttpBinding_ITwoWayAsync" type="tns:Honeywell_INT_LIMS_ODS_LIMSResult_Schema_Orc_LIMS_ODS_ResultData_Prt_Rcv_LIMSResult">
+ 
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+ 
+-<wsdl:operation name="Opr_Rcv_LIMSResultData">
+ 
+<wsdl:documentation>operation "Opr_Rcv_LIMSResultData"</wsdl:documentation>
+ 
+<soap:operation style="document" soapAction="Opr_Rcv_LIMSResultData"/>
+ 
+-<wsdl:input>
+ 
+<soap:body use="literal"/>
+ 
+</wsdl:input>
+ 
+-<wsdl:output>
+ 
+<soap:body use="literal"/>
+ 
+</wsdl:output>
+ 
+</wsdl:operation>
+ 
+</wsdl:binding>
+ 
+-<wsdl:service name="BizTalkServiceInstance">
+ 
+-<wsdl:port name="BasicHttpBinding_ITwoWayAsync" binding="tns:BasicHttpBinding_ITwoWayAsync">
+ 
+<soap:address location="http://izsvpasbiz01.iris.local/Honeywell.INT.LIMS_ODS_LIMSResult/Honeywell_INT_LIMS_ODS_LIMSResult_Schema_Orc_LIMS_ODS_ResultData_Prt_Rcv_LIMSResult.svc"/>
+ 
+</wsdl:port>
+ 
+</wsdl:service>
+ 
+</wsdl:definitions>
